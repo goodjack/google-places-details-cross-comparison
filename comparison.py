@@ -101,14 +101,20 @@ def main():
                     sql += str(offset) + ", "
                 sql += str(limit)
 
+            print("Execute SQL...", datetime.now())
             cursor.execute(sql)
+            
             place = cursor.fetchone()
             while place is not None:
-                comparison_result = cross_compare(place, areas)
-
                 place_id = place.get('place_id')
                 language = place.get('language')
-                insert_comparison_result(connection, place_id, language, json.dumps(comparison_result))
+                print("Place ID:", place_id, "Language:", language,
+                      datetime.now())
+
+                comparison_result = cross_compare(place, areas)
+
+                insert_comparison_result(connection, place_id, language,
+                                         json.dumps(comparison_result))
                 place = cursor.fetchone()
     finally:
         connection.close()
