@@ -1,0 +1,153 @@
+Jakarta Utara
+Kelapa Gading
+Muara Karang
+Pantai Indah Kapuk
+Pluit
+Sunter
+Mangga Dua
+Pantai Mutiara
+Ancol
+Cilincing
+Pademangan
+Tanjung Priok
+
+Jakarta Pusat
+Menteng
+Sudirman
+Thamrin
+Gajah Mada
+Karet
+Monas
+Sabang
+Bendungan Hilir
+Gambir
+Kebon Sirih
+Pangeran Jayakarta
+Salemba
+Tanah Abang
+Cempaka Putih
+Gunung Sahari
+Kemayoran
+Pasar Baru
+Sarinah
+Cikini
+Harmoni
+Pecenongan
+Senen
+
+Jakarta Barat
+Cengkareng
+Duta Mas
+Green Ville
+Grogol
+Hayam Wuruk
+Jelambar
+Kebon Jeruk
+Mangga Besar
+Puri
+Slipi
+Tanjung Duren
+Daan Mogot
+kemanggisan
+Palmerah
+Permata Hijau
+Cideng
+Green Garden
+Puri Indah
+Tomang
+Ciledug
+Kedoya
+Meruya
+Roxy
+
+Jakarta Timur
+Cimanggis
+Klender
+Pondok Bambu
+Taman Mini
+Cawang
+Jatinegara
+Kramat Jati
+Pondok Gede
+Cibubur
+Kali Malang
+Matraman
+Pulogadung
+Cijantung
+Kampung melayu
+Pasar Rebo
+Rawamangun
+
+Jakarta Selatan
+Blok M
+Cilandak
+Gandaria
+Kemang
+Kuningan
+Panglima Polim
+Pasar Santa
+Pondok Indah
+SCBD
+Senayan
+Senopati
+Setiabudi
+Tebet
+Wijaya
+Bulungan
+Ciputat
+Kalibata
+Melawai
+Pasar Minggu
+Bintaro
+Cilandak
+Dharmawangsa
+Kebayoran Baru
+Lebak Bulus
+Pamulang
+Pujasera Blok S
+Wolter Monginsidi
+Cinere
+Fatmawati
+Kebayoran Lama
+Mampang
+Pancoran
+Radio Dalam
+Cipete
+Gatot Subroto
+Manggarai
+
+Tangerang
+Alam Sutera
+BSD
+Gading Serpong
+Karawaci
+Tangerang Kota
+Cipondoh
+
+Bogor
+Bogor Tengah
+Bogor Timur
+Bogor Utara
+Cibubur
+Puncak
+Tanah Sareal
+Botani Square
+Cileungsi
+Pajajaran
+Sentul
+Sukasari
+Surya Kencana
+
+Depok
+Beji
+Cimanggis
+Kelapa Dua
+Sukmajaya
+Margonda
+
+Bekasi
+Bekasi Barat
+Bekasi Selatan
+Bekasi Utara
+Jatisampurna
+Cikarang

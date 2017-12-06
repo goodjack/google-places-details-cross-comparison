@@ -13,6 +13,20 @@ load_dotenv(dotenv_path, override=True)
 
 PLACE_DETAILS_LANG = os.environ.get("PLACE_DETAILS_LANG")
 PLACE_DETAILS_TABLE = os.environ.get("PLACE_DETAILS_TABLE")
+AREAS_FILE = os.environ.get("AREAS_FILE")
+
+
+def get_all_areas():
+    areas = []
+
+    with open(AREAS_FILE) as input_file:
+        for line in input_file:
+            area = line.strip()
+
+            if area != '':
+                areas.append(area)
+
+    return areas
 
 
 def get_mysql_connection():
@@ -33,6 +47,32 @@ def get_mysql_connection():
     return connection
 
 
+def cross_compare(place, areas):
+    place_results = json.loads(place['results'])
+    address = json.dumps(place_results.get('result').get('formatted_address'))
+    components = json.dumps(
+        place_results.get('result').get('address_components'))
+
+    result = []
+    for area in areas:
+        if (area in address) or (area in components):
+            result.append(area)
+
+    return result
+
+
+def insert_comparison_result(connection, place_id, language,
+                             comparison_result):
+    try:
+        with connection.cursor() as cursor:
+            sql = "UPDATE `" + PLACE_DETAILS_TABLE + "` SET `comparison_result` = %s WHERE `place_id` = %s AND `language` = %s"
+            cursor.execute(sql, (comparison_result, place_id, language))
+
+        connection.commit()
+    finally:
+        pass
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-l', help='The limit order by created_at')
@@ -49,10 +89,11 @@ def main():
     else:
         offset = None
 
+    areas = get_all_areas()
     connection = get_mysql_connection()
     try:
         with connection.cursor() as cursor:
-            sql = "SELECT * FROM " + PLACE_DETAILS_TABLE + " ORDER BY `created_at`"
+            sql = "SELECT * FROM `" + PLACE_DETAILS_TABLE + "` ORDER BY `created_at`"
 
             if limit is not None:
                 sql += " LIMIT "
@@ -63,7 +104,11 @@ def main():
             cursor.execute(sql)
             place = cursor.fetchone()
             while place is not None:
-                # TODO: do something...
+                comparison_result = cross_compare(place, areas)
+
+                place_id = place.get('place_id')
+                language = place.get('language')
+                insert_comparison_result(connection, place_id, language, json.dumps(comparison_result))
                 place = cursor.fetchone()
     finally:
         connection.close()
