@@ -1,0 +1,7 @@
+bakery
+cafe
+restaurant
+bar
+night_club
+meal_takeaway
+meal_delivery
